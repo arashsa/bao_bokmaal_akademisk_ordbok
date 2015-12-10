@@ -1,0 +1,28 @@
+<template name="home">
+    <head>
+        <title>NBAO - Norsk Bokmål Akademisk Ordliste</title>
+    </head>
+
+    <body>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" property="">
+
+    <nav>
+        <div class="nav-wrapper #006064 cyan darken-4">
+            <div class="container">
+                <a href="#"  class="brand-logo">
+                    <i class="large material-icons">spellcheck</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="">Listen</a></li>
+                    <li><a href="">Er din tekst akademisk?</a></li>
+                    <li><a href="">Om listen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {{> yield}}
+
+    </body>
+
+</template>

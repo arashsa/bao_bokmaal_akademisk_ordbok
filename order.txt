@@ -1,0 +1,27 @@
+files in the application, in the priority given below:
+
+1. HTML template files are always loaded before everything else
+2. Files beginning with main. are loaded last
+3. Files inside any lib/ directory are loaded next
+4. Files with deeper paths are loaded next
+5. Files are then loaded in alphabetical order of the entire path
+
+nav.html
+main.html
+client/lib/methods.js
+client/lib/styles.js
+lib/feature/styles.js
+lib/collections.js
+client/feature-y.js
+feature-x.js
+client/main.js
+
+Method 2: Folders inside client/ and server/
+lib/apples/               # common code for apples
+lib/oranges/              # and oranges
+
+client/apples/            # client code for apples
+client/oranges/           # and oranges
+
+server/apples/            # server code for apples
+server/oranges/           # and oranges
