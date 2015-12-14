@@ -2,5 +2,7 @@ Meteor.publish('List', function () {
     return List.find()
 });
 
-List.remove({});
-console.log("done");
+// TODO: comment out after testing
+// To reset list
+//List.remove({});
+//console.log("deleted");

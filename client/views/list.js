@@ -5,6 +5,16 @@ Session.setDefaultPersistent('nr', size);
 // 1 = alphabetic
 Session.setDefaultPersistent('sort', 0);
 
+// current word for examples and the number of examples taken
+Session.setDefaultPersistent('word', ['', 0]);
+
+// for returning alphabetic lists
+var l = '';
+
+Meteor.startup(function () {
+    l = List.find({}, {sort: {word: 1}}).fetch();
+});
+
 var setOrder = function (academic_word) {
     // sort by nr
     if (Session.get('sort') === 0) {
@@ -15,11 +25,9 @@ var setOrder = function (academic_word) {
 
     // sort alphabetically
     } else if (Session.get('sort') === 1) {
-        var l = List.find({}, {sort: {word: 1}}).fetch();
         var index = 0;
         for (var i = 0; i < l.length; i++) {
             if (l[i].word === academic_word.word) {
-                console.log(i);
                 index = i;
                 break;
             }
@@ -40,6 +48,20 @@ Template.list.helpers({
 });
 
 Template.list.events({
+    // Getting examples
+    'click #example': function (event) {
+        var return_example = Math.floor((Math.random() * this.examples.length));
+        Session.setPersistent('word', [this.word, return_example]);
+
+        event.preventDefault();
+        if (this.examples[0]) {
+            MaterializeModal.display({
+                bodyTemplate: 'examples',
+                title: this.word,
+                example: this.examples[return_example]
+            });
+        }
+    },
     'click #nr': function (event) {
         event.preventDefault();
         Session.setPersistent('sort', 0);
