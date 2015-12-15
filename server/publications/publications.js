@@ -8,5 +8,5 @@ Meteor.publish('Remove', function () {
 
 // TODO: comment out after testing
 // To reset list
-//List.remove({});
-//console.log("deleted");
+List.remove({});
+console.log("deleted");

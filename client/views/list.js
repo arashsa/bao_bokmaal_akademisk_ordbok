@@ -50,6 +50,7 @@ Template.list.helpers({
 Template.list.events({
     // Getting examples
     'click #example': function (event) {
+        Session.set('removed', false);
 
         // To show feedback buttons
         Session.setPersistent('feedback', true);

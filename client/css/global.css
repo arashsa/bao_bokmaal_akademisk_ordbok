@@ -5,3 +5,7 @@
 .left-margin {
     margin-left: 3px;
 }
+
+.example {
+    min-height: 50px;
+}

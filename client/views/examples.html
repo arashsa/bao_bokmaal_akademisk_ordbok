@@ -1,19 +1,26 @@
 <template name="examples">
     {{#if first}}
-        <p>
+        <p class="example">
             "{{example}}"
         </p>
     {{else}}
-        <p>
-            "{{example_}}"
+        <p class="example {{color}}">
+            {{#if color}}
+                {{example_}}
+            {{else}}
+                "{{example_}}"
+            {{/if}}
         </p>
     {{/if}}
     <a class="waves-effect waves-light btn" id="next">Neste</a>
 
     {{#if showFeedback}}
-    <hr>
-    <p>Synes du dette var et godt eksempel?</p>
-    <a class="waves-effect waves-light btn" id="yes">Ja</a>
-    <a class="waves-effect waves-light btn" id="no">Nei</a>
+        <hr>
+        <p>Synes du dette var et godt eksempel?</p>
+        <a class="waves-effect waves-light btn" id="yes">Ja</a>
+        <a class="waves-effect waves-light btn" id="no">Nei</a>
+        {{else}}
+        <hr>
+        <p>Takk for tilbakemelding!</p>
     {{/if}}
 </template>
