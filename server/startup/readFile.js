@@ -21,7 +21,6 @@ if (data_from_list === 0) {
     }
 
     var examples = Assets.getText('nav_examples.txt').split('\n');
-
     var current_word = '';
     for (i = 0; i < examples.length; i++) {
         // the actual word
@@ -36,4 +35,5 @@ if (data_from_list === 0) {
             }
         }
     }
+    console.log("Done");
 }

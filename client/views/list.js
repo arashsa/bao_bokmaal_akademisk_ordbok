@@ -50,6 +50,10 @@ Template.list.helpers({
 Template.list.events({
     // Getting examples
     'click #example': function (event) {
+
+        // To show feedback buttons
+        Session.setPersistent('feedback', true);
+
         var return_example = Math.floor((Math.random() * this.examples.length));
         Session.setPersistent('word', [this.word, return_example]);
 
