@@ -53,16 +53,18 @@ Template.list.events({
 
         // To show feedback buttons
         Session.setPersistent('feedback', true);
+        // To show current example sentence
+        Session.setPersistent('first', true);
 
-        var return_example = Math.floor((Math.random() * this.examples.length));
-        Session.setPersistent('word', [this.word, return_example]);
+        var returnExample = Math.floor((Math.random() * this.examples.length));
+        Session.setPersistent('word', [this.word, returnExample]);
 
         event.preventDefault();
         if (this.examples[0]) {
             MaterializeModal.display({
                 bodyTemplate: 'examples',
                 title: this.word,
-                example: this.examples[return_example]
+                example: this.examples[returnExample]
             });
         }
     },

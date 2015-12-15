@@ -1,7 +1,14 @@
 <template name="examples">
-    <p>
-        "{{example}}"
-    </p>
+    {{#if first}}
+        <p>
+            "{{example}}"
+        </p>
+    {{else}}
+        <p>
+            "{{example_}}"
+        </p>
+    {{/if}}
+    <a class="waves-effect waves-light btn" id="next">Neste</a>
 
     {{#if showFeedback}}
     <hr>
