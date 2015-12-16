@@ -133,6 +133,9 @@ Template.list.events({
 
 Template.home.events({
     'click #list': function () {
-        Session.setPersistent('nr', size)
+        if (Session.get('sort') === 0)
+            Session.setPersistent('nr', size);
+        else if (Session.get('sort') === 1)
+            Session.setPersistent('nr', 0);
     }
 });
