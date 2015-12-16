@@ -1,3 +1,7 @@
+// For evaluation
+Session.setDefaultPersistent('evaluate', true);
+
+// For getting text
 Session.setDefault('currentText', '');
 Session.setDefault('text', '');
 
