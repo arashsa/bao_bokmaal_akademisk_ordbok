@@ -1,14 +1,14 @@
 <template name="examples">
     {{#if first}}
         <p class="example">
-            "{{example}}"
+            {{{example}}}
         </p>
     {{else}}
         <p class="example {{color}}">
             {{#if color}}
-                {{example_}}
+                {{{example_}}}
             {{else}}
-                "{{example_}}"
+                {{{example_}}}
             {{/if}}
         </p>
     {{/if}}
@@ -16,7 +16,7 @@
 
     {{#if showFeedback}}
         <hr>
-        <p>Synes du dette var et godt eksempel?</p>
+        <p>Synes du dette er et godt eksempel?</p>
         <a class="waves-effect waves-light btn" id="yes">Ja</a>
         <a class="waves-effect waves-light btn" id="no">Nei</a>
         {{else}}

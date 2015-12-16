@@ -50,24 +50,7 @@ Template.list.helpers({
 Template.list.events({
     // Getting examples
     'click #example': function (event) {
-        Session.set('removed', false);
-
-        // To show feedback buttons
-        Session.setPersistent('feedback', true);
-        // To show current example sentence
-        Session.setPersistent('first', true);
-
-        var returnExample = Math.floor((Math.random() * this.examples.length));
-        Session.setPersistent('word', [this.word, returnExample]);
-
-        event.preventDefault();
-        if (this.examples[0]) {
-            MaterializeModal.display({
-                bodyTemplate: 'examples',
-                title: this.word,
-                example: this.examples[returnExample]
-            });
-        }
+        showExampleModal(this.word, this.examples);
     },
     'click #nr': function (event) {
         event.preventDefault();

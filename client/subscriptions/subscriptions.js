@@ -1,2 +1,2 @@
 Meteor.subscribe('List');
-Meteor.subscribe('Remove');
+//Meteor.subscribe('Remove');

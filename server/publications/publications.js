@@ -5,8 +5,3 @@ Meteor.publish('List', function () {
 Meteor.publish('Remove', function () {
     return Remove.find();
 });
-
-// TODO: comment out after testing
-// To reset list
-List.remove({});
-console.log("deleted");

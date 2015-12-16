@@ -1,3 +1,10 @@
+// TODO: comment out after testing
+// To reset list
+//List.remove({});
+//Remove.remove({});
+//Removed.remove({});
+//console.log("Deleted Collections and restarted project");
+
 var data_from_list = List.find().count();
 
 // If lists is empty, reads NAV file and fills the collection
@@ -19,6 +26,7 @@ if (data_from_list === 0) {
         });
         count += 1;
     }
+    console.log("Academic list read from file.");
 
     var examples = Assets.getText('nav_examples.txt').split('\n');
     var current_word = '';
@@ -35,5 +43,5 @@ if (data_from_list === 0) {
             }
         }
     }
-    console.log("Done");
+    console.log("Examples read from file.");
 }

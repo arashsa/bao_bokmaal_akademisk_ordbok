@@ -32,23 +32,17 @@ Template.examples.events({
         var index = Session.get('word')[1];
 
         Meteor.call('addToRemoveList', currentWord, index);
-        var remove = Remove.findOne({word: currentWord, index: index});
-        if (remove)
-            remove = remove.negatives;
+        Meteor.call('checkAndRemove', currentWord, index, function (error, response) {
+            console.log(response);
+            if (error) {
+                console.log('Error in check and remove callback from server');
+            }
 
-        // If it gets more than 2 negative reviews, remove word
-        if (remove > 1) {
-            if (index > -1) {
-                var newExamples = List.findOne({word: currentWord}).examples;
-                var toRemove = newExamples[index];
-
-                // remove the examples from array
-                newExamples.splice(index, 1);
-                // Remove
-                Meteor.call('removeExample', currentWord, newExamples, toRemove);
+            // Removed from list
+            if (response) {
                 Session.set('removed', true);
             }
-        }
+        });
 
         Session.setPersistent('feedback', false);
         //setNewExample();
@@ -73,7 +67,9 @@ Template.examples.helpers({
         if (Session.get('removed')) {
             return 'Takk for tilbakemelding! Setningen er nå fjernet fra eksempler.'
         }
-        return List.findOne({word: Session.get('word')[0]}).examples[Session.get('word')[1]];
+        return returnExampleWithTags(
+            Session.get('word')[0],
+            List.findOne({word: Session.get('word')[0]}).examples[Session.get('word')[1]]);
     },
     'color': function () {
         if (Session.get('removed'))
