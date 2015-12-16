@@ -22,7 +22,7 @@ Template.academic.events({
     },
     'click #example': function (event) {
         var cWord = List.findOne({word: event.target.innerHTML
-            .toLowerCase().replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()\n]/g,"")});
+            .toLowerCase().replace(/[.,-\/#!?$%\^&\*;:{}=\-_`~()\n]/g,"")});
         //console.log(cWord);
         showExampleModal(cWord.word, cWord.examples);
     }

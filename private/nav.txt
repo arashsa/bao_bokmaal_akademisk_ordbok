@@ -4,7 +4,7 @@ informant subst 125909
 ulik adj 125130
 oppgave subst 101610
 grad subst 95482
-blant annet" 84785
+blant prep 84785
 beskrive verb 80601
 sosial adj 78486
 form subst 71553
@@ -431,7 +431,7 @@ gjennomgående adj 4808
 statistisk adj 4780
 utbre verb 4761
 redskap subst 4756
-utelukkende 0 4701
+utelukkende adv 4701
 erkjennelse subst 4673
 framstå verb 4664
 innhente verb 4657
@@ -494,7 +494,7 @@ implisitt adj 3847
 sammensatt adj 3844
 ektefelle subst 3835
 hierarkisk adj 3825
-ad infinitum" 3791
+ad prep 3791
 assosiasjon subst 3789
 henvende verb 3777
 entydig adj 3752
@@ -558,7 +558,7 @@ oppfattelse subst 3156
 setting subst 3140
 vedvare verb 3134
 implikasjon subst 3121
-overens 0 3118
+overens adv 3118
 preferanse subst 3107
 slutning subst 3083
 samfunnsmessig adj 3080
