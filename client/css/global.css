@@ -6,10 +6,56 @@
     margin-left: 3px;
 }
 
+/*Examples*/
 .example {
-    min-height: 50px;
+    min-height: 80px;
 }
 
 .duo {
     margin-top: 5%;
+}
+
+.about {
+    margin-right: 30%;
+    margin-bottom: 100px;
+}
+
+.academic-box {
+    margin-top: 5%;
+}
+
+.push-below {
+    margin-bottom: 1%;
+}
+
+.push-above {
+    margin-top: 1%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+p, a {
+    font-size: 16px;
+}
+
+/*For top of table*/
+.a-top {
+    font-size: 1.64rem;
+}
+
+.bao {
+    margin-left: 50px;
+}
+
+/*Overwrite the modal*/
+.modal > .modal-content {
+    padding-bottom: 0;
 }

@@ -4,23 +4,64 @@
     </head>
 
     <body>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" property="">
-    <nav>
-        <div class="nav-wrapper #006064 cyan darken-4">
-            <div class="container">
-                <a href="/" id="list" class="brand-logo">
-                    <i class="large material-icons">spellcheck</i>
-                </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/" id="list">Lista</a></li>
-                    <li><a href="/academic">Er din tekst akademisk?</a></li>
-                    <li><a href="/about">Om lista</a></li>
-                </ul>
+
+    <header>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" property="">
+        <nav class="nav-font">
+            <div class="nav-wrapper #006064 cyan darken-4">
+                <div class="container">
+                    <a href="/" id="list" class="brand-logo">
+                        <i class="large material-icons">spellcheck</i>
+                    </a>
+
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                    <class class="bao">
+                        Bokmål Akademisk Ordliste
+                    </class>
+
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/" id="list">Lista</a></li>
+                        <li><a href="/academic" id="academic">Er din tekst akademisk?</a></li>
+                        <li><a href="/about">Om lista</a></li>
+                        <li><a href="/aboutEnglish">About</a></li>
+                    </ul>
+
+                    <ul class="side-nav right" id="mobile-demo">
+                        <li><a href="/" id="list">Lista</a></li>
+                        <li><a href="/academic" id="academic">Er din tekst akademisk?</a></li>
+                        <li><a href="/about">Om lista</a></li>
+                        <li><a href="/aboutEnglish">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {{> yield}}
+    </main>
+
+
+    <footer class="page-footer white">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <a href="http://www.hf.uio.no/iln/" target="_blank"><img class="responsive-img hf" src="hf.png"></a>
+                </div>
+                <div class="col s2 right">
+                    <a href="http://www.hf.uio.no/iln/om/organisasjon/tekstlab/" target="_blank"><img class="responsive-img tekstlab" src="tekstlab.png"></a>
+                </div>
             </div>
         </div>
-    </nav>
-
-    {{> yield}}
+        <div class="footer-copyright #006064 cyan darken-4">
+            <div class="container">
+                © 2015 Arash Saidi
+                <!--<a class="grey-text text-lighten-4 right" href="http://www.hf.uio.no/iln/om/organisasjon/tekstlab/"-->
+                   <!--target="_blank"> Tekstlaboratoriet </a>-->
+            </div>
+        </div>
+    </footer>
 
     </body>
 

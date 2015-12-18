@@ -1,19 +1,47 @@
 <template name="academic">
     <div class="container">
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Tekst her</label>
+        {{#if evaluate}}
+            <div class="row">
+                {{#if evalTop}}
+                    <div class="col s12">
+                        <a class="waves-effect waves-light btn push-above push-below" id="evaluate">Evaluer</a>
                     </div>
+                {{/if}}
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Tekst her</label>
+                        </div>
+                    </div>
+                </form>
+                <div class="col s12">
+                    <a class="waves-effect waves-light btn" id="evaluate">Evaluer</a>
                 </div>
-            </form>
-            <a class="waves-effect waves-light btn" id="evaluate">Evaluer</a>
-        </div>
+            </div>
 
-        <div class="row">
-            {{{text}}}
-        </div>
+        {{else}}
+            <div class="row academic-box">
+                <div class="col s12">
+                {{{text}}}
+                </div>
+                <div class="col s12 push-below">
+                    <a class="waves-effect waves-light btn" id="back">Tilbake</a>
+                </div>
+
+                <div class="col s3">
+                    <div class="card-panel red lighten-2">Høyfrekvent</div>
+                </div>
+                <div class="col s3">
+                    <div class="card-panel orange lighten-2">Middels frekvent</div>
+                </div>
+                <div class="col s3">
+                    <div class="card-panel lime lighten-2">Mindre frekvent</div>
+                </div>
+                <div class="col s3">
+                    <div class="card-panel green lighten-2">Lite frekvent</div>
+                </div>
+            </div>
+        {{/if}}
     </div>
 </template>
