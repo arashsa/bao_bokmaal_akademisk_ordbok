@@ -1,21 +1,27 @@
-var size = 12;
-Session.setDefaultPersistent('nr', size);
+var size = 10;
+//Session.setDefaultPersistent('nr', size);
 
 // 0 = numeric
 // 1 = alphabetic
-Session.setDefaultPersistent('sort', 0);
+//Session.setDefaultPersistent('sort', 1);
 
 // current word for examples and the number of examples taken
-Session.setDefaultPersistent('word', ['', 0]);
+//Session.setDefaultPersistent('word', ['', 0]);
 
-// for returning alphabetic lists
-var l = '';
+//Session.setPersistent('wordsAsList', List.find({}, {$sort: {word: 1}}).fetch());
 
-Meteor.startup(function () {
-    l = List.find({}, {sort: {word: 1}}).fetch();
+Template.list.onRendered(function () {
+    Session.setPersistent('nr', 0);
+    Session.setPersistent('sort', 1);
+    Session.setPersistent('word', ['', 0]);
+    Session.setPersistent('wordsAsList', List.find({}, {sort: {word: 1}}).fetch());
 });
 
+// Sets the order for search
+// This function is called after having found the actual academic word
+// The word is now known to be in database, just set the order
 var setOrder = function (academic_word) {
+
     // sort by nr
     if (Session.get('sort') === 0) {
         if (academic_word.nr + size - 1 <= size)
@@ -25,13 +31,17 @@ var setOrder = function (academic_word) {
 
     // sort alphabetically
     } else if (Session.get('sort') === 1) {
+        // hack for alphabetic ordering
         var index = 0;
-        for (var i = 0; i < l.length; i++) {
-            if (l[i].word === academic_word.word) {
+        var theList = Session.get('wordsAsList');
+        for (var i = 0; i < theList.length; i++) {
+            if (theList[i].word === academic_word.word) {
+                console.log(theList[i].word, academic_word.word, i);
                 index = i;
                 break;
             }
         }
+        //console.log(Session.get('wordsAsList'));
         Session.setPersistent('nr', index);
     }
 };
@@ -42,7 +52,8 @@ Template.list.helpers({
             return List.find({$and: [{nr: {$lte: Session.get('nr')}}, {nr: {$gte: Session.get('nr') - size + 1}}]},
                 {sort: {nr: 1}});
         } else if (Session.get('sort') === 1) {
-            return List.find({}, {sort: {word: 1}}).fetch().slice(Session.get('nr'), Session.get('nr') + size)
+            return Session.get('wordsAsList').slice(Session.get('nr'), Session.get('nr') + size);
+            //return List.find({}, {sort: {word: 1}}).fetch().slice(Session.get('nr'), Session.get('nr') + size)
         }
     }
 });
@@ -105,7 +116,10 @@ Template.list.events({
         }
 
     },
-    // Search
+
+    //
+    //The search function
+    //
     'keyup .validate': function (event) {
         //event.preventDefault();
         var text = event.target.value;

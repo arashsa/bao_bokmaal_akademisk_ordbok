@@ -1,6 +1,16 @@
 <template name="list">
 
     <div class="container">
+
+        <div class="row">
+            <div class="col s4">
+                <div class="input-field">
+                    <input id="search" type="text" class="validate" name="search">
+                    <label for="search">Søk i ordlista</label>
+                </div>
+            </div>
+        </div>
+
         <table class="bordered highlight my-table">
             <thead>
             <tr>
@@ -25,16 +35,12 @@
         </table>
     </div>
 
-    <div class="container">
+    <!---->
+    <div class="container push-above-2">
         <div class="row">
             <div class="col s4">
                 <a class="waves-effect waves-light btn" id="back">Tilbake</a>
                 <a class="waves-effect waves-light btn" id="next">Neste</a>
-
-                <div class="input-field">
-                    <input id="search" type="text" class="validate" name="search">
-                    <label for="search">Søk</label>
-                </div>
             </div>
             <div class="col s8">
                 <a class="waves-effect waves-light btn right left-margin" id="end">Slutt</a>

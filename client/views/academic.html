@@ -1,10 +1,10 @@
 <template name="academic">
     <div class="container">
         {{#if evaluate}}
-            <div class="row">
+            <div class="row academic-box">
                 {{#if evalTop}}
-                    <div class="col s12">
-                        <a class="waves-effect waves-light btn push-above push-below" id="evaluate">Evaluer</a>
+                    <div class="col s12 push-below">
+                        <a class="waves-effect waves-light btn" id="evaluate">Evaluer</a>
                     </div>
                 {{/if}}
                 <form class="col s12">
@@ -22,12 +22,11 @@
 
         {{else}}
             <div class="row academic-box">
-                <div class="col s12">
-                {{{text}}}
-                </div>
-                <div class="col s12 push-below">
-                    <a class="waves-effect waves-light btn" id="back">Tilbake</a>
-                </div>
+                {{#if evalTop}}
+                    <div class="col s12 push-below">
+                        <a class="waves-effect waves-light btn" id="back">Tilbake</a>
+                    </div>
+                {{/if}}
 
                 <div class="col s3">
                     <div class="card-panel red lighten-2">Høyfrekvent</div>
@@ -40,6 +39,14 @@
                 </div>
                 <div class="col s3">
                     <div class="card-panel green lighten-2">Lite frekvent</div>
+                </div>
+
+                <div class="col s12">
+                {{{text}}}
+                </div>
+
+                <div class="col s12 push-below push-above">
+                    <a class="waves-effect waves-light btn" id="back">Tilbake</a>
                 </div>
             </div>
         {{/if}}

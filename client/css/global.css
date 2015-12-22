@@ -32,6 +32,10 @@
     margin-top: 1%;
 }
 
+.push-above-2 {
+    margin-top: 2%;
+}
+
 body {
     display: flex;
     min-height: 100vh;

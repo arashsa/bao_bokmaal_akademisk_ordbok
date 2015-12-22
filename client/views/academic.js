@@ -5,6 +5,11 @@ Session.setDefaultPersistent('evaluate', true);
 Session.setDefault('currentText', '');
 Session.setDefault('text', '');
 
+// when loading subscribe to Forms
+//Template.academic.onCreated(function () {
+//    this.subscribe('Forms');
+//});
+
 Template.academic.helpers({
     'text': function () {
         return new Spacebars.SafeString(Session.get('text'));
@@ -14,7 +19,7 @@ Template.academic.helpers({
     },
     'evalTop': function () {
         var text = Session.get('currentText');
-        return text.length > 500;
+        return text.length > 1000;
     }
 });
 
@@ -47,9 +52,19 @@ Template.academic.events({
         Session.setPersistent('evaluate', true)
     },
     'click #example': function (event) {
-        var cWord = List.findOne({word: event.target.innerHTML
-            .toLowerCase().replace(/[.,-\/#!?$%\^&\*;:{}=\-_`~()\n]/g,"")});
-        //console.log(cWord);
-        showExampleModal(cWord.word, cWord.examples);
+        var currWord = event.target.innerHTML.toLowerCase().replace(/[.,-\/#!?$%\^&\*;:{}=\-_`~()\n]/g,"");
+        var cWord = List.findOne({word: currWord});
+
+        if (cWord) {
+            showExampleModal(cWord.word, cWord.examples);
+        }
+        else {
+            Meteor.call('getForm', currWord, function (error, response) {
+                cWord = response;
+                if (cWord) {
+                    showExampleModal(cWord, List.findOne({word: cWord}).examples)
+                }
+            });
+        }
     }
 });

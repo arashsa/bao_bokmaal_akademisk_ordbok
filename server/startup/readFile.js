@@ -26,7 +26,7 @@ if (data_from_list === 0) {
         });
         count += 1;
     }
-    console.log("Academic list read from file.");
+    console.log("Academic list read from file...");
 
     var examples = Assets.getText('nav_examples.txt').split('\n');
     var current_word = '';
@@ -43,5 +43,35 @@ if (data_from_list === 0) {
             }
         }
     }
-    console.log("Examples read from file.");
+    console.log("Examples read from file...");
+}
+
+var formsCount = Forms.find().count();
+
+// Fill in forms
+if (formsCount === 0) {
+    console.log('Filling in forms...');
+    var forms = Assets.getText('akademisk.ff.txt');
+    var lines = forms.split('\n');
+
+    // Go through each line
+    for (i = 0; i < lines.length; i++) {
+
+        // Get all forms
+        var currLine = lines[i].split(' ');
+
+        // If there are forms
+        if (currLine[1].length > 0) {
+            // Go through all forms and add to database
+            for (var j = 1; j < currLine.length; j++) {
+                if (currLine[j] != currLine[0]) {
+                    Forms.insert({
+                        form: currLine[j],
+                        main: currLine[0]
+                    })
+                }
+            }
+        }
+    }
+
 }
