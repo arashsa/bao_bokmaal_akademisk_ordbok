@@ -2,6 +2,13 @@
     margin-bottom: 1%;
 }
 
+.my-table2 {
+    margin-bottom: 1%;
+	font-size: 16px;
+ cellspacing: "0"; 
+ cellpadding: "0";
+}
+
 .left-margin {
     margin-left: 3px;
 }
@@ -46,9 +53,27 @@ main {
     flex: 1 0 auto;
 }
 
+h3 {
+font-size: 28px;
+}
+
+h4 {
+font-size: 22px;
+}
+
+h5 {
+font-size: 18px;
+}
+
+
 p, a {
     font-size: 16px;
 }
+
+a:hover {
+	text-decoration: none;
+	color: #333;
+	}
 
 /*For top of table*/
 .a-top {
