@@ -21,10 +21,10 @@ Meteor.methods({
             }
         }
 
-        var red = '<span class="red-text text-darken-4">';
-        var orange = '<span class="orange-text text-darken-4">';
-        var yellow = '<span class="lime-text text-darken-4">';
-        var green = '<span class="green-text text-darken-4">';
+        var red = '<span class="red-text-b">';
+        var orange = '<span class="orange-text-b">';
+        var yellow = '<span class="lime-text-b">';
+        var green = '<span class="green-text-b">';
         var endSpan = '</span>';
         var aHref = '<a href="#" id="example">';
 

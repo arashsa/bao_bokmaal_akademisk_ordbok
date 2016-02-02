@@ -1,3 +1,32 @@
+/*red: #E77271*/
+/*orange #FFB840*/
+/*yellow #DCE96D*/
+/*green #7FC881*/
+
+.red-text-b {
+    padding: 3px;
+    background-color: #E77271;
+    color: black;
+}
+
+.orange-text-b {
+    padding: 3px;
+    background-color: #FFB840;
+    color: black;
+}
+
+.lime-text-b {
+    padding: 3px;
+    background-color: #DCE96D;
+    color: black;
+}
+
+.green-text-b {
+    padding: 3px;
+    background-color: #7FC881;
+    color: black;
+}
+
 .my-table {
     margin-bottom: 1%;
 }
@@ -67,6 +96,10 @@ h5 {
 
 p, a {
     font-size: 16px;
+}
+
+p {
+    line-height: 180%;
 }
 
 a:hover {
