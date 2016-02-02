@@ -11,8 +11,9 @@ var size = 10;
 //Session.setPersistent('wordsAsList', List.find({}, {$sort: {word: 1}}).fetch());
 
 Template.list.onRendered(function () {
-    Session.setPersistent('nr', 0);
-    Session.setPersistent('sort', 1);
+    // setting nr to size so to render the size nr of list items
+    Session.setPersistent('nr', size);
+    Session.setPersistent('sort', 0);
     Session.setPersistent('word', ['', 0]);
     Session.setPersistent('wordsAsList', List.find({}, {sort: {word: 1}}).fetch());
 });
