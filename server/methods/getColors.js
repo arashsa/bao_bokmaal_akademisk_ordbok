@@ -30,9 +30,13 @@ Meteor.methods({
 
         for (i = 0; i < textAsList.length; i++) {
             var cWord = textAsList[i];
+
+            // trying to get the forms first
             var oWord = Forms.findOne({form: textAsList[i].toLowerCase().replace(/[.,-\/#!?$%\^&\*;:{}=\-_`~()\n]/g, "")});
 
-            if (!oWord) {
+            if (oWord) {
+                oWord = List.findOne({word: oWord.main});
+            } else {
                 oWord = List.findOne({word: textAsList[i].toLowerCase().replace(/[.,-\/#!?$%\^&\*;:{}=\-_`~()\n]/g, "")});
             }
 
