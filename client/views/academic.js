@@ -31,19 +31,23 @@ Template.academic.events({
     'click #evaluate': function (event) {
         // evaluates and creates the color coding
 
-        // how many characters to evaluate at once
-        var evaluate = 1000;
+        // how many words
+        var evaluate = 100;
 
         event.preventDefault();
 
         Session.setPersistent('evaluate', false);
         var text = Session.get('currentText');
+        text = text.split(' ');
+        Session.set('text', '<p>');
 
         for (var i = 0; i < text.length; i += evaluate) {
-            Meteor.call('getColors', text.substring(i, i+evaluate-1), function (error, response) {
+            Meteor.call('getColors', text.slice(i, i + evaluate), function (error, response) {
                 Session.set('text', Session.get('text') + response);
             });
         }
+
+        Session.set('text', Session.get('text') + '</p>');
     },
     'click #back': function (event) {
         event.preventDefault();

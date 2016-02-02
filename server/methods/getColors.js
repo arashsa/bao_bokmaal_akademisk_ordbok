@@ -2,8 +2,8 @@ Meteor.methods({
     'getColors': function (text) {
         // Returns a text with color scheme for academic texts
 
-        var formattedText = '<p>';
-        var textAsList = text.split(' ');
+        var formattedText = '';
+        var textAsList = text;
 
         // Adding newline to text
         for (var i = 0; i < textAsList.length; i++) {
@@ -55,7 +55,7 @@ Meteor.methods({
             }
         }
 
-        formattedText += '</p>';
+        //formattedText += '</p>';
         return formattedText;
     }
 
