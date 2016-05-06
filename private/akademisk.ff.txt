@@ -444,7 +444,7 @@ representativ representativere representative representativt representativeste r
 utvalgt utvalgte utvalgtere utvalgtest utvalgteste utvalgte utvelg utvelge utvelgende utvelger utvelges
 poengtere poengter poengterende poengterer poengteres poengtert poengterte
 utelukke utelukka utelukkede utelukkete utelukket utelukkende utelukk utelukkes utelukker
-vie via vidde viede viete vigde vidd viet vigd viende vi vies vier
+vie via vidde viede viete vigde vidd viet vigd viende vies vier
 formulering formuleringa formuleringen formuleringene formuleringer
 intellektuell intellektuelle intellektuellere intellektuellest intellektuelleste intellektuelt
 åpenhet åpenheta åpenheten åpenhetene åpenheter
@@ -1194,7 +1194,7 @@ representativ representativere representative representativ representativt repre
 utvalgt utvalgt utvalgte utvalgtere utvalgtest utvalgteste utvalgt utvalgte utvelg utvelge utvelgende utvelger utvelges
 poengtere poengter poengtere poengterende poengterer poengteres poengtert poengterte
 utelukke utelukka utelukkede utelukkete utelukket utelukkende utelukk utelukke utelukkes utelukker
-vie via vidde viede viete vigde vidd viet vigd viende vi vie vies vier
+vie via vidde viede viete vigde vidd viet vigd viende vie vies vier
 formulering formulering formuleringa formuleringen formuleringene formuleringer
 intellektuell intellektuell intellektuelle intellektuellere intellektuellest intellektuelleste intellektuelt
 åpenhet åpenhet åpenheta åpenheten åpenhetene åpenheter

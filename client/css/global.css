@@ -2,6 +2,11 @@
 /*orange #FFB840*/
 /*yellow #DCE96D*/
 /*green #7FC881*/
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
 
 .red-text-b {
     padding: 3px;
